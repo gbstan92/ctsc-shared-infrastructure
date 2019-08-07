@@ -10,7 +10,7 @@ slackChannel = "#ctsc-master-builds"
 
 onMaster {
     try {
-        sharedInfrastructurePipeline('ctsc', environment.nonProdName, 'nonprod')
+        //sharedInfrastructurePipeline('ctsc', environment.nonProdName, 'nonprod')
         sharedInfrastructurePipeline('ctsc', environment.demoName, 'nonprod')
         //sharedInfrastructurePipeline('ctsc', environment.prodName, 'prod')
         notifyBuildFixed channel: slackChannel
