@@ -59,6 +59,10 @@ variable "team_contact" {
   default     = "#ctsc-dev"
 }
 
+variable "managed_identity_object_id" {
+  default = ""
+}
+
 // LOCALS
 locals {
   ase_name = "core-compute-${var.env}"
