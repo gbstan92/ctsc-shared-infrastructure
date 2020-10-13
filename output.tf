@@ -11,9 +11,9 @@ output "appInsightsInstrumentationKey" {
 }
 
 output "managedIdentityClientId" {
-  value = vault.managed_identity_clientid
+  value = module.vault.managed_identity_clientid
 }
 
 output "managedIdentityObjectId" {
-  value = vault.managed_identity_objectid
+  value = module.vault.managed_identity_objectid
 }
