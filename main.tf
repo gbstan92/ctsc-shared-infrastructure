@@ -2,7 +2,7 @@ provider azurerm {
   features {}
 }
 
-resource "azurerm_resource_group" "shared_rg" {
+resource "azurerm_resource_group" "shared" {
   name     = "${var.product}-${var.env}"
   location = var.location
 
@@ -11,8 +11,8 @@ resource "azurerm_resource_group" "shared_rg" {
 
 resource "azurerm_application_insights" "appinsights" {
   name                = "${var.product}-${var.env}"
-  location            = azurerm_resource_group.shared_rg.location
-  resource_group_name = azurerm_resource_group.shared_rg.name
+  location            = azurerm_resource_group.shared.location
+  resource_group_name = azurerm_resource_group.shared.name
   application_type    = "web"
 
   tags = local.tags
@@ -33,7 +33,7 @@ module "vault" {
   env                 = var.env
   tenant_id           = var.tenant_id
   object_id           = var.jenkins_AAD_objectId
-  resource_group_name = azurerm_resource_group.shared_rg.name
+  resource_group_name = azurerm_resource_group.shared.name
 
   product_group_object_id = var.product_group_object_id
   common_tags             = local.tags
