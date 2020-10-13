@@ -1,1 +1,1 @@
-managed_identity_object_id="2522d62e-1b44-470a-b01c-26edc8065671"
+managed_identity_object_id = "2522d62e-1b44-470a-b01c-26edc8065671"
